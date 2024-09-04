@@ -103,76 +103,60 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-md mt-2">
+        <div class="col-12 col-md-3 mt-2">
             <div class="form-group">
                 <label asp-for="Celular" class="control-label"></label>
                 <input asp-for="Celular" class="form-control" />
                 <span asp-validation-for="Celular" class="text-danger"></span>
             </div>
         </div>
-        <div class="col-12 col-md mt-2">
+        <div class="col-12 col-md-3 mt-2">
             <div class="form-group">
                 <label asp-for="Telefone" class="control-label"></label>
                 <input asp-for="Telefone" class="form-control" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
-
-
-
         </div>
-
-        <div class="row">
-            <div class="col-12 mt-2">
-                <div class="form-group">
-                    <label asp-for="Observacao" class="control-label"></label>
-                    <input asp-for="Observacao" class="form-control" />
-                    <span asp-validation-for="Observacao" class="text-danger"></span>
-                </div>
+        <div class="col-12 col-md-5 mt-2">
+            <div class="form-group">
+                <label asp-for="DataCadastro" class="control-label"></label>
+                <input readonly="readonly" asp-for="DataCadastro" class="form-control" />
+                <span asp-validation-for="DataCadastro" class="text-danger"></span>
             </div>
         </div>
+        <div class="col-12 col-md-1 mt-2">
+            <label>Ativo?</label>
+            <div class="form-check form-switch form-control-lg">
+                <input class="form-check-input" type="checkbox" role="switch" asp-for="CadastroAtivo" /> SIM
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col col-md-12 mt-3">
+            <div class="form-group">
+                <label asp-for="Observacao">Observações</label>
+                <textarea asp-for="Observacao" class="form-control" itemid="Observacao" name="Observacao" rows="3"></textarea>
+            </div>
+            <span asp-validation-for="Observacao" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <a class="btn btn-outline-secondary w-100 mt-4" asp-action="Index">Voltar</a>
+        </div>
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success w-100 mt-4" />
+            </div>
+        </div>
     </div>
 
 </form>
 
-<!--
-<div class="row">
-    <div class="col-md-4">
-
-            <div class="form-group">
-                <label asp-for="TipoPessoa" class="control-label"></label>
-                <input asp-for="TipoPessoa" class="form-control" />
-                <span asp-validation-for="TipoPessoa" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="DataCadastro" class="control-label"></label>
-                <input asp-for="DataCadastro" class="form-control" />
-                <span asp-validation-for="DataCadastro" class="text-danger"></span>
-            </div>
-
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="CadastroAtivo" /> @Html.DisplayNameFor(model => model.CadastroAtivo)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Observacao" class="control-label"></label>
-                <input asp-for="Observacao" class="form-control" />
-                <span asp-validation-for="Observacao" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
--->
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{
