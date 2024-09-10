@@ -11,12 +11,15 @@ namespace AppFluxoDeCaixa.Data
         {
         }
         public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Clientes> Fornecedores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.Entity<Clientes>().ToTable("1234Clientes");
+            builder.Entity<Fornecedor>().ToTable("Fornecedor");
         }
+        public DbSet<AppFluxoDeCaixa.Models.Fornecedor> Fornecedor { get; set; } = default!;
 
     }
 }
